@@ -6,21 +6,50 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="280dp"
+        android:layout_height="401dp"
+        android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back1" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="280dp"
+        android:layout_height="401dp"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="196dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:text="Welcome to Doctor's prescription app"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:layout_editor_absoluteX="119dp"
-        tools:layout_editor_absoluteY="202dp" />
+        android:id="@+id/btnStart"
+        android:layout_width="135dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="Start"
+        android:textColor="#fff"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:paddingRight="11dp"
+        android:background="@drawable/start_btn_background"
+        />
+    />
 
 </android.support.constraint.ConstraintLayout>
