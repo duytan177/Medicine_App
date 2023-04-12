@@ -5,9 +5,11 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.app.medicine.API.Api
 import com.app.medicine.MainActivity
 import com.app.medicine.R
-import com.app.medicine.ServiceGenerator
+import com.app.medicine.API.ServiceGenerator
+import com.app.medicine.Model.UserModel
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -25,7 +27,8 @@ class LoginActivity : AppCompatActivity() {
 
         // Btn chuyển hướng tới Register
         btnRegister.setOnClickListener() {
-//            val i = Intent(this, )
+            val i = Intent(this, RegisterActivity::class.java)
+            startActivity(i)
         }
 
         btnLogin.setOnClickListener(){

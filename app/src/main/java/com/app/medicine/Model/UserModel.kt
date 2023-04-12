@@ -1,4 +1,4 @@
-package com.app.medicine.Auth
+package com.app.medicine.Model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -11,6 +11,11 @@ class UserModel{
         @SerializedName("email")
         @Expose
         var email:String ?= null
+
+/*      @SerializedName("ID") ---> Ví dụ, trường studentId trong được đại diện là ID trong JSON.
+        @Expose
+        var studentId:String ?= null
+ */
 
         @SerializedName("password")
         @Expose

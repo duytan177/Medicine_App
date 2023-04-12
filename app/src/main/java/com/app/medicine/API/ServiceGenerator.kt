@@ -1,8 +1,5 @@
-package com.app.medicine
+package com.app.medicine.API
 
-import android.app.Application
-import android.app.Service
-import com.app.medicine.Auth.Api
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
