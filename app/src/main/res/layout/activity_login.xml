@@ -12,7 +12,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical" >
 
             <ImageView
@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Login"
+                android:layout_marginTop="-15dp"
                 android:textAlignment="center"
                 android:textColor="#6C5DD2"
                 android:textSize="40sp"
@@ -35,7 +36,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="16dp"
                 android:layout_marginHorizontal="32dp"
                 android:orientation="vertical">
 
@@ -169,19 +169,29 @@
                 <Button
                     android:id="@+id/btnRegister"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:layout_weight="5"
                     android:text="Sign Up" />
             </LinearLayout>
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="Login"
-                android:textColor="@color/white"
-                android:layout_gravity="center"
-                android:background="@drawable/loginbtn_background"/>
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/btnLogin"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:text="Login"
+                    android:textColor="@color/white"
+                    android:layout_gravity="center"
+                    android:background="@drawable/loginbtn_background"/>
+            </android.support.constraint.ConstraintLayout>
+
 
         </LinearLayout>
     </ScrollView>
