@@ -10,6 +10,7 @@ import com.app.medicine.MainActivity
 import com.app.medicine.R
 import com.app.medicine.API.ServiceGenerator
 import com.app.medicine.Model.UserModel
+import com.app.medicine.Model.UserRequest
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback

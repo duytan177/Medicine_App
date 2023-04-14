@@ -8,6 +8,7 @@ android {
     namespace 'com.app.medicine'
     compileSdk 33
 
+
     defaultConfig {
         applicationId "com.app.medicine"
         minSdk 26
@@ -32,6 +33,8 @@ android {
         jvmTarget = '1.8'
     }
 }
+
+
 
 dependencies {
 
