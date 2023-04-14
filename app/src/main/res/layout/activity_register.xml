@@ -10,8 +10,10 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="-72dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-253dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,34 +54,34 @@
                     android:textSize="18sp" />
 
                 <RadioGroup
-                    android:id="@+id/radioGroup"
+                    android:id="@+id/status"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/checkbox_Mr"
+                        android:id="@+id/mr"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Mr" />
 
                     <RadioButton
-                        android:id="@+id/checkbox_Mrs"
+                        android:id="@+id/mrs"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Mrs" />
 
                     <RadioButton
-                        android:id="@+id/checkbox_Dr"
+                        android:id="@+id/dr"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="Dr" />
 
                     <RadioButton
-                        android:id="@+id/checkbox_Me"
+                        android:id="@+id/me"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -92,122 +94,114 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtFirstName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:layout_weight="1"
                     android:text="First Name: "
-                    android:layout_marginTop="6dp"
-                    android:textSize="16sp"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtFirstName"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="Enter Your First Name"
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
-                    android:textSize="18sp"
+                    android:hint="Enter Your First Name"
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Last Name -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtLastName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:layout_weight="1"
                     android:text="Last Name: "
-                    android:layout_marginTop="6dp"
-                    android:textSize="16sp"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtLastName"
                     android:layout_width="match_parent"
                     android:layout_height="33dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint="Enter Your Last Name"
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint="Enter Your Last Name"
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Email -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtEmail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:layout_weight="1"
                     android:text="Email-address: "
-                    android:layout_marginTop="6dp"
-                    android:textSize="16sp"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtEmail"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:hint="Enter Your Email"
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint="Enter Your Email"
+                    android:inputType="textEmailAddress"
                     android:textColor="#707070"
-                    android:textSize="16sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <!-- Password -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtPassword"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Password:"
                     android:layout_marginTop="6dp"
                     android:layout_marginEnd="10dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="Password:"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtPassword"
@@ -229,8 +223,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtConfirmPassword"
@@ -245,16 +238,16 @@
                     android:id="@+id/edtConfirmPassword"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textEmailAddress"
-                    android:hint="******"
-                    android:layout_marginLeft="5dp"
                     android:gravity="center"
+                    android:hint="******"
+                    android:inputType="textEmailAddress"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Date of Birth: -->
@@ -268,8 +261,8 @@
                     android:id="@+id/txtDate"
                     android:layout_width="130dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginTop="8dp"
+                    android:layout_weight="1"
                     android:text="Date of Birth:"
                     android:textColor="#6C5DD2"
                     android:textSize="16sp" />
@@ -278,16 +271,16 @@
                     android:id="@+id/edtDate"
                     android:layout_width="150dp"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="date"
-                    android:hint="mm/dd/yyyy"
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint="mm/dd/yyyy"
+                    android:inputType="date"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
 
                 <ImageButton
                     android:id="@+id/btnSelectDate"
@@ -302,126 +295,119 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtAddress1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Address 1:"
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="11dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="Address 1:"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtAddress1"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Address 2 -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
-
-                <TextView
-                    android:id="@+id/txtAddress2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Address 2:"
-                    android:layout_marginRight="11dp"
-                    android:layout_marginTop="6dp"
-                    android:textSize="16sp"
-                    android:textColor="#6C5DD2"
-                    />
-
-                <EditText
-                    android:id="@+id/edtAddress2"
-                    android:layout_width="match_parent"
-                    android:layout_height="35dp"
-                    android:background="@drawable/background_edt"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
-                    android:gravity="center"
-                    android:textColor="#707070"
-                    android:textSize="18sp"
-                    android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
-            </LinearLayout>
 
             <!-- Code Postal -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
+
+                <TextView
+                    android:id="@+id/txtAddress2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="11dp"
+                    android:layout_weight="1"
+                    android:text="Address 2:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtAddress2"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtCodePostal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
                     android:layout_weight="1"
                     android:text="Code Postal"
-                    android:layout_marginTop="6dp"
-                    android:textSize="16sp"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtCodePostal"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- City -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="City: "
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="52dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="City: "
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/edtCity"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
@@ -441,254 +427,239 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtSiret"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="47dp"
                     android:layout_weight="1"
                     android:text="Siret: "
-                    android:layout_marginTop="6dp"
-                    android:textSize="16sp"
-                    android:layout_marginRight="47dp"
-
                     android:textColor="#6C5DD2"
-                    />
+
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtSiret"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Num VAT -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtNumVAT"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Num VAT: "
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="15dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="Num VAT: "
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtNumVAT"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- IBAN:  -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtIBAN"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="IBAN: "
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="46dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="IBAN: "
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtIBAN"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- B.I.C SWIFT  -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtBIC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="B.I.C SWIFT: "
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="-1dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="B.I.C SWIFT: "
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtBIC"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Sponsor Code  -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtSponsorCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="-17dp"
                     android:layout_weight="1"
                     android:text="Sponsor Code: "
-                    android:layout_marginRight="-17dp"
-                    android:layout_marginTop="8dp"
-                    android:textSize="16sp"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtSponsorCode"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Number SSRS  -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtSSRS"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Number SSRS: "
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="-15dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="Number SSRS: "
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtSSRS"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Default  -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtDefault"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Default: "
                     android:layout_marginTop="6dp"
                     android:layout_marginRight="34dp"
-                    android:textSize="16sp"
+                    android:layout_weight="1"
+                    android:text="Default: "
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtDefault"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
-                    android:layout_marginLeft="20dp"
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Provider category  -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtProviderCategory"
@@ -696,32 +667,30 @@
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:text="Provider category: "
-                    android:textSize="16sp"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtProviderCategory"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:layout_marginRight="10dp"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <!-- Dissertation Currency  -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                >
+                android:layout_marginHorizontal="20dp">
 
                 <TextView
                     android:id="@+id/txtDissertationCurrency"
@@ -729,24 +698,23 @@
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:text="Dissertation Currency: "
-                    android:textSize="16sp"
                     android:textColor="#6C5DD2"
-                    />
+                    android:textSize="16sp" />
 
                 <EditText
                     android:id="@+id/edtDissertationCurrency"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="10dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
-                    android:hint=""
                     android:gravity="center"
+                    android:hint=""
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
-                    android:textSize="18sp"
                     android:textColorHint="#707070"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="8dp"/>
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <LinearLayout
