@@ -19,10 +19,6 @@ object ServiceGenerator  {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .client(client)
             .build()
-<<<<<<< HEAD
-
-=======
->>>>>>> master
     }
 
 }
