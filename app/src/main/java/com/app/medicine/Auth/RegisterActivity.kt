@@ -8,21 +8,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.RadioButton
-import android.widget.Toast
 import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
-import com.app.medicine.Model.CityResponse
-import com.app.medicine.Model.RegisterRequest
+import com.app.medicine.Controller.CityResponse
+import com.app.medicine.Controller.RegisterRequest
 import com.app.medicine.Model.UserModel
 import com.app.medicine.R
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
-import com.google.gson.JsonObject
-import com.google.gson.reflect.TypeToken
-import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
-import kotlinx.android.synthetic.main.activity_register.view.*
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
 import java.text.SimpleDateFormat
@@ -36,6 +28,7 @@ class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+
         api = ServiceGenerator.getInstance().create(Api::class.java)
         getCity()
         // Radio Button

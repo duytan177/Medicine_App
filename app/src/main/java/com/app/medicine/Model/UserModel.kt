@@ -7,6 +7,7 @@ class UserModel{
     @SerializedName("data")
     @Expose
     var data: User?= null
+
     class User{
 //        @SerializedName("email")
 //        @Expose
