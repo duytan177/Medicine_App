@@ -23,7 +23,7 @@ interface Api {
     @GET("projectdemo/register")
     fun getCities(): Call<MutableList<CityResponse>>
 
-    @Headers("Content-type: application/json", "Connection: close", "Accept-Encoding: identity")
+
     @POST("/projectdemo/api/register")
     fun register(@Body registerRequest: RegisterRequest) : Call<UserModel>
 
