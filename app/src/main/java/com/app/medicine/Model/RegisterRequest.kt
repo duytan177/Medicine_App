@@ -25,13 +25,13 @@ class RegisterRequest {
     @Expose
     var password:String ?= null
 
-    @SerializedName("password_comfirmation")
+    @SerializedName("password_confirmation")
     @Expose
     var password_comfirmation:String ?= null
 
-    @SerializedName("dataofbirth")
+    @SerializedName("dateofbirth")
     @Expose
-    var dataofbirth:String ?= null
+    var dateofbirth:String ?= null
 
     @SerializedName("address1")
     @Expose
@@ -45,7 +45,7 @@ class RegisterRequest {
     @Expose
     var address2:String ?= null
 
-    @SerializedName("city_id")
+    @SerializedName("city")
     @Expose
     var city:String ?= null
 

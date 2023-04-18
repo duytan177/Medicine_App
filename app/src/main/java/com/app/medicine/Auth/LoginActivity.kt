@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
         // Btn chuyển hướng tới Register
         btnRegister.setOnClickListener() {
             val i = Intent(this, RegisterActivity::class.java)
+            i.putE
             startActivity(i)
         }
 

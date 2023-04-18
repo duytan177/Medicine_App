@@ -180,7 +180,7 @@
                     android:ems="10"
                     android:gravity="center"
                     android:hint="Enter Your Email"
-                    android:inputType="textEmailAddress"
+                    android:inputType="textPersonName"
                     android:textColor="#707070"
                     android:textColorHint="#707070"
                     android:textSize="16sp" />
