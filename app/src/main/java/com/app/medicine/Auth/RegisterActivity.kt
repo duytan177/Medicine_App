@@ -85,6 +85,7 @@ class RegisterActivity : AppCompatActivity() {
             }
             val request = RegisterRequest()
             val id: Int = status.checkedRadioButtonId
+
             request.status = findViewById<RadioButton>(id).text.toString()
             request.firstname = edtFirstName.text.toString()
             request.lastname = edtLastName.text.toString()
@@ -148,10 +149,10 @@ class RegisterActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
 
-        status.setOnCheckedChangeListener() { group, checkedId ->
-            val radioButton = findViewById<RadioButton>(checkedId)
-            val valueStatus = radioButton.text.toString()
-        }
+//        status.setOnCheckedChangeListener() { group, checkedId ->
+//            val radioButton = findViewById<RadioButton>(checkedId)
+//            val valueStatus = radioButton.text.toString()
+//        }
         val request = RegisterRequest()
         val id: Int = status.checkedRadioButtonId
         var status = findViewById<RadioButton>(id).text.toString()

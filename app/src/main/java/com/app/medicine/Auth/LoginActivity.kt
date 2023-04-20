@@ -24,19 +24,14 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
     private lateinit var api: Api
     private lateinit var dialog: ProgressDialog
-    private lateinit var sf : SharedPreferences
-    private lateinit var editor : SharedPreferences.Editor
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         api = ServiceGenerator.getInstance().create(Api::class.java)
-        sf = getSharedPreferences("my_sf", MODE_PRIVATE)
-        editor = sf.edit()
 
         // Btn chuyển hướng tới Register
         btnRegister.setOnClickListener() {
             val i = Intent(this, RegisterActivity::class.java)
-            i.putE
             startActivity(i)
         }
         btnLogin.setOnClickListener(){
@@ -44,19 +39,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    override fun onPause() {
-        super.onPause()
-        val email = edtEmailLogin.text.toString()
-        editor.apply() {
-            putString("email", email)
-            commit()
-        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        val email = sf.getString("email", null)
-    }
 
     private fun sendLogin() {
         val request = UserRequest()

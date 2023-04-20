@@ -55,7 +55,7 @@
                     android:layout_height="50dp"
                     android:background="@drawable/background_edt"
                     android:ems="10"
-                    android:inputType="textPersonName"
+                    android:inputType="textEmailAddress"
                     android:hint="Enter Your Email"
                     android:gravity="center"
                     android:textColor="#707070"
