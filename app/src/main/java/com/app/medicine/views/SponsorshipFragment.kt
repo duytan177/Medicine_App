@@ -24,6 +24,8 @@ class SponsorshipFragment : Fragment() {
     private lateinit var api: Api
     private val listDataSponsorShip: ArrayList<SponsorshipModel> = ArrayList()
     private val adapter: SponsorshipAdapter = SponsorshipAdapter()
+    private var hasBeenCalled = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,7 +37,8 @@ class SponsorshipFragment : Fragment() {
         /* Trong Fragment phải khởi tạo view đã rồi mới code tiếp được */
         val view = inflater.inflate(R.layout.fragment_sponsorship, container, false)
 
-        getSponsorship()
+            getSponsorship()
+
 
         /* VIEW */
         return view
@@ -48,8 +51,16 @@ class SponsorshipFragment : Fragment() {
                 response: Response<MutableList<SponsorshipModel>>
             ) {
                 Log.i("Hihihihi", "${response.body().toString()}")
-                if(response.isSuccessful && response.body() != null) {
-                    listDataSponsorShip.addAll(response.body()!!)
+                if(response.isSuccessful &&
+                    response.body() != null)
+                {
+                /*   hasBeenCalled chỉ để gọi một lần, nếu không sử dụng thì mỗi lần bấm vào fragment
+                     sponsor là nó sẽ gọi api nhiều lần =>> render ra view nhiều lần ( dư thừa )*/
+                    if(!hasBeenCalled) {
+                        listDataSponsorShip.addAll(response.body()!!)
+                        hasBeenCalled = true
+                    }
+
                     // Thêm data đã gọi từ API vào trong list, list này là list đã được tạo trong Adapter
                     adapter.setData(listDataSponsorShip)
                     _recySponsorData.adapter = adapter
