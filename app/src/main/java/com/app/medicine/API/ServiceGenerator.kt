@@ -9,7 +9,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ServiceGenerator  {
     private val client = OkHttpClient.Builder().build()
 
-    private const val URL = "http://192.168.2.85:8080/"
+    // Địa chỉ của Nam
+    private const val URL = "http://192.168.56.1:8080/"
     fun getInstance(): Retrofit {
         val gson = GsonBuilder()
             .setLenient()

@@ -11,10 +11,11 @@ import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
-import com.app.medicine.Model.CityResponse
-import com.app.medicine.Model.RegisterRequest
+import com.app.medicine.Controller.CityResponse
+import com.app.medicine.Controller.RegisterRequest
 import com.app.medicine.Model.UserModel
 import com.app.medicine.R
+
 import com.google.gson.stream.JsonReader
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
@@ -84,6 +85,7 @@ class RegisterActivity : AppCompatActivity() {
             }
             val request = RegisterRequest()
             val id: Int = status.checkedRadioButtonId
+
             request.status = findViewById<RadioButton>(id).text.toString()
             request.firstname = edtFirstName.text.toString()
             request.lastname = edtLastName.text.toString()
@@ -147,10 +149,10 @@ class RegisterActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
 
-        status.setOnCheckedChangeListener() { group, checkedId ->
-            val radioButton = findViewById<RadioButton>(checkedId)
-            val valueStatus = radioButton.text.toString()
-        }
+//        status.setOnCheckedChangeListener() { group, checkedId ->
+//            val radioButton = findViewById<RadioButton>(checkedId)
+//            val valueStatus = radioButton.text.toString()
+//        }
         val request = RegisterRequest()
         val id: Int = status.checkedRadioButtonId
         var status = findViewById<RadioButton>(id).text.toString()

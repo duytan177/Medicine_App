@@ -1,4 +1,4 @@
-package com.app.medicine.Model
+package com.app.medicine.Controller
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
