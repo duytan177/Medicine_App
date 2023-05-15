@@ -1,4 +1,4 @@
-package com.app.medicine.views
+package com.app.medicine.views.user
 
 import android.os.Bundle
 import android.util.Log
@@ -6,30 +6,27 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
 import com.app.medicine.Adapter.SponsorshipAdapter
-import com.app.medicine.Controller.CityResponse
 import com.app.medicine.Model.SponsorshipModel
 import com.app.medicine.R
 import kotlinx.android.synthetic.main.fragment_sponsorship.*
-import kotlinx.android.synthetic.main.fragment_sponsorship.view.*
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class SponsorshipFragment : Fragment() {
     private lateinit var api: Api
     private val listDataSponsorShip: ArrayList<SponsorshipModel> = ArrayList()
     private val adapter: SponsorshipAdapter = SponsorshipAdapter()
+    private var hasBeenCalled = false
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
 
     ): View? {
-
         api = ServiceGenerator.getInstance().create(Api::class.java)
 
         /* Trong Fragment phải khởi tạo view đã rồi mới code tiếp được */
@@ -47,10 +44,21 @@ class SponsorshipFragment : Fragment() {
                 response: Response<MutableList<SponsorshipModel>>
             ) {
                 Log.i("Hihihihi", "${response.body().toString()}")
+
                 if(response.isSuccessful && response.body() != null) {
                     listDataSponsorShip.clear()
                     listDataSponsorShip.addAll(response.body()!!)
                     if(isAdded()){
+                if(response.isSuccessful &&
+                    response.body() != null)
+                {
+                /*   hasBeenCalled chỉ để gọi một lần, nếu không sử dụng thì mỗi lần bấm vào fragment
+                     sponsor là nó sẽ gọi api nhiều lần =>> render ra view nhiều lần ( dư thừa )*/
+                    if(!hasBeenCalled) {
+                        listDataSponsorShip.addAll(response.body()!!)
+                        hasBeenCalled = true
+                    }
+
                     // Thêm data đã gọi từ API vào trong list, list này là list đã được tạo trong Adapter
                         adapter.setData(listDataSponsorShip)
                         _recySponsorData.adapter = adapter
@@ -62,8 +70,9 @@ class SponsorshipFragment : Fragment() {
 
                     }
                 }
-            }
+            }}
             override fun onFailure(call: Call<MutableList<SponsorshipModel>>, t: Throwable) {
+                Log.e("e","errroe")
                 Log.e("error",t.message.toString())
             }
 

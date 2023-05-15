@@ -10,8 +10,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
 import com.app.medicine.Controller.UserRequest
+
 import com.app.medicine.Model.UserModel
 import com.app.medicine.R
+
 import com.app.medicine.views.HomeActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call

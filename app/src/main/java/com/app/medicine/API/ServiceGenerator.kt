@@ -10,7 +10,7 @@ object ServiceGenerator  {
     private val client = OkHttpClient.Builder().build()
 
     // Địa chỉ của Nam
-    private const val URL = "http://192.168.56.1:8080/"
+    private const val URL = "http://192.168.1.114:8080/"
     fun getInstance(): Retrofit {
         val gson = GsonBuilder()
             .setLenient()

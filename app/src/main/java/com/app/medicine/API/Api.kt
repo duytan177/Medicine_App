@@ -6,11 +6,10 @@ import com.app.medicine.Controller.RegisterRequest
 import com.app.medicine.Model.UserModel
 import com.app.medicine.Controller.UserRequest
 import com.app.medicine.Model.SponsorshipModel
+import com.app.medicine.Model.UsersModel
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Headers
 
 import retrofit2.http.POST
 
@@ -23,10 +22,12 @@ interface Api {
     @GET("projectdemo/register")
     fun getCities(): Call<MutableList<CityResponse>>
 
-
     @POST("/projectdemo/api/register")
     fun register(@Body registerRequest: RegisterRequest,) : Call<UserModel>
 
-    @GET("projectdemo/api")
+    @GET("projectdemo/user/sponsorship")
     fun getSponsorship() : Call<MutableList<SponsorshipModel>>
+
+    @GET("projectdemo/admin/user")
+    fun getAllUsers() : Call<MutableList<UsersModel>>
 }
