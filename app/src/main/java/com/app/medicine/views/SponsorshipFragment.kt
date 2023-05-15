@@ -34,7 +34,6 @@ class SponsorshipFragment : Fragment() {
 
         /* Trong Fragment phải khởi tạo view đã rồi mới code tiếp được */
         val view = inflater.inflate(R.layout.fragment_sponsorship, container, false)
-
         getSponsorship()
 
         /* VIEW */
@@ -49,15 +48,19 @@ class SponsorshipFragment : Fragment() {
             ) {
                 Log.i("Hihihihi", "${response.body().toString()}")
                 if(response.isSuccessful && response.body() != null) {
+                    listDataSponsorShip.clear()
                     listDataSponsorShip.addAll(response.body()!!)
+                    if(isAdded()){
                     // Thêm data đã gọi từ API vào trong list, list này là list đã được tạo trong Adapter
-                    adapter.setData(listDataSponsorShip)
-                    _recySponsorData.adapter = adapter
-                    _recySponsorData.layoutManager = LinearLayoutManager(
-                        requireContext(),
-                        LinearLayoutManager.VERTICAL,
-                        false
-                    )
+                        adapter.setData(listDataSponsorShip)
+                        _recySponsorData.adapter = adapter
+                        _recySponsorData.layoutManager = LinearLayoutManager(
+                            requireContext(),
+                            LinearLayoutManager.VERTICAL,
+                            false
+                        )
+
+                    }
                 }
             }
             override fun onFailure(call: Call<MutableList<SponsorshipModel>>, t: Throwable) {
@@ -66,6 +69,5 @@ class SponsorshipFragment : Fragment() {
 
         })
     }
-
 
 }

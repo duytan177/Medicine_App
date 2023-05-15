@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btnStart.setOnClickListener() {
-            val i = Intent(this, HomeActivity::class.java)
+            val i = Intent(this, LoginActivity::class.java)
             startActivity(i)
         }
 

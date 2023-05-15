@@ -9,18 +9,22 @@ class UserModel{
     var data: User?= null
 
     class User{
-//        @SerializedName("email")
-//        @Expose
-//        var email:String ?= null
-//
-///*      @SerializedName("ID") ---> Ví dụ, trường studentId trong được đại diện là ID trong JSON.
-//        @Expose
-//        var studentId:String ?= null
-// */
-//
-//        @SerializedName("password")
-//        @Expose
-//        var password:String ?= null
+        @SerializedName("id") //---> Ví dụ, trường studentId trong được đại diện là ID trong JSON.
+        @Expose
+        var id:String ?= null
+
+        @SerializedName("email")
+        @Expose
+        var email:String ?= null
+
+
+        @SerializedName("name")
+        @Expose
+        var name:String ?= null
+
+        @SerializedName("role") //---> Ví dụ, trường studentId trong được đại diện là ID trong JSON.
+        @Expose
+        var role:String ?= null
 
         @SerializedName("token")
         @Expose

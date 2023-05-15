@@ -13,6 +13,7 @@ import androidx.navigation.ui.NavigationUI
 import com.app.medicine.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.nav_drawer.*
+import kotlinx.android.synthetic.main.nav_header.*
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,16 @@ class HomeActivity : AppCompatActivity() {
         navDrawer.itemIconTintList = null
         imgMenu.setOnClickListener() {
             drawerLayout.openDrawer(GravityCompat.START)
+            val id = intent.getStringExtra("id")
+            val name = intent.getStringExtra("name")
+            val role = intent.getStringExtra("role")
+            Log.e("âsd","${id +name+ role}")
+            txtuserName.setText(name)
+            if(role == "1"){
+                txtuserRole.setText("Admintrator")
+            }else{
+                txtuserRole.setText("User")
+            }
         }
 
         // Fragment Home View
@@ -35,5 +46,6 @@ class HomeActivity : AppCompatActivity() {
             .addOnDestinationChangedListener { controller, destination, arguments ->
                 textTitle.text = destination.label
             }
+
     }
 }
