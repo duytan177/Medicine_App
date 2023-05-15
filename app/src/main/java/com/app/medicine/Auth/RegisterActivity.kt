@@ -39,7 +39,6 @@ class RegisterActivity : AppCompatActivity() {
 
         sf = getSharedPreferences("my_sf", MODE_PRIVATE)
         editor = sf.edit()
-
         api = ServiceGenerator.getInstance().create(Api::class.java)
 
         getCity()
@@ -252,7 +251,6 @@ class RegisterActivity : AppCompatActivity() {
         val myFormat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myFormat, Locale.UK)
         edtDate.setText(sdf.format(myCalendar.time))
-
     }
 
 
