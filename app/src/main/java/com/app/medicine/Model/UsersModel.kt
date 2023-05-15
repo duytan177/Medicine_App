@@ -1,0 +1,31 @@
+package com.app.medicine.Model
+
+data class UsersModel(
+    var active: Int ?= null,
+    var address1: String ?= null,
+    var address2: String ?= null,
+    var api_token: String ?= null,
+    var city_id: Int ?= null,
+    var codepostal: String ?= null,
+    var created_at: String ?= null,
+    var dateofbirth: String ?= null,
+    var default: String ?= null,
+    var dissertation: String ?= null,
+    var email: String ?= null,
+    var email_verified_at: String ?= null,
+    var iban: String ?= null,
+    var id: Int ?= null,
+    var name: String ?= null,
+    var numberSSRS: String ?= null,
+    var password: String ?= null,
+    var percentage: String ?= null,
+    var provider: String ?= null,
+    var remember_token: String ?= null,
+    var role: Int ?= null,
+    var siret: String ?= null,
+    var sponsor: String ?= null,
+    var status: String ?= null,
+    var swift: String ?= null,
+    var updated_at: String ?= null,
+    var vat: String ?= null
+)

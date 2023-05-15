@@ -7,7 +7,7 @@ class UserRequest  {
     @SerializedName("email")
     @Expose
     var email:String ?= null
-    @SerializedName("passwordd")
+    @SerializedName("password")
     @Expose
     var password:String ?= null
 }

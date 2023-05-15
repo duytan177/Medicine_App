@@ -1,4 +1,4 @@
-package com.app.medicine.views
+package com.app.medicine.views.user
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -27,7 +27,7 @@ class ProfileFragment : Fragment() {
         chooseStartAndEndDate(view, view.btnSelectEndDate)
         return view
     }
-    private fun chooseStartAndEndDate(view : View, btnselectdate : View) {
+    private fun chooseStartAndEndDate(view : View, selectdate : View) {
 
         val myCalendar = Calendar.getInstance()
 
@@ -36,15 +36,14 @@ class ProfileFragment : Fragment() {
             myCalendar.set(Calendar.MONTH, month)
             myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            if(btnselectdate == btnSelectStartDate) {
+            if(selectdate == btnSelectStartDate) {
                 updateLable(myCalendar, edtStartDate)
             }
-            if(btnselectdate == btnSelectEndDate) {
+            if(selectdate == btnSelectEndDate) {
                 updateLable(myCalendar, edtEndDate)
             }
         }
-
-            btnselectdate.setOnClickListener() {
+            selectdate.setOnClickListener() {
                 DatePickerDialog(
                     requireContext(), datePicker, myCalendar.get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                     myCalendar.get(Calendar.DAY_OF_MONTH)

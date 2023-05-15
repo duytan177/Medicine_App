@@ -1,4 +1,4 @@
-package com.app.medicine.views
+package com.app.medicine.views.user
 
 import android.os.Bundle
 import android.util.Log
@@ -6,19 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
 import com.app.medicine.Adapter.SponsorshipAdapter
-import com.app.medicine.Controller.CityResponse
 import com.app.medicine.Model.SponsorshipModel
 import com.app.medicine.R
 import kotlinx.android.synthetic.main.fragment_sponsorship.*
-import kotlinx.android.synthetic.main.fragment_sponsorship.view.*
 import retrofit2.Call
 import retrofit2.Response
-import javax.security.auth.callback.Callback
 
 class SponsorshipFragment : Fragment() {
     private lateinit var api: Api
@@ -31,14 +27,11 @@ class SponsorshipFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-
         api = ServiceGenerator.getInstance().create(Api::class.java)
 
         /* Trong Fragment phải khởi tạo view đã rồi mới code tiếp được */
         val view = inflater.inflate(R.layout.fragment_sponsorship, container, false)
-
-            getSponsorship()
-
+        getSponsorship()
 
         /* VIEW */
         return view

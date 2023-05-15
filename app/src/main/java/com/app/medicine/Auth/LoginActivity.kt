@@ -14,6 +14,7 @@ import com.app.medicine.R
 import com.app.medicine.API.ServiceGenerator
 import com.app.medicine.Model.UserModel
 import com.app.medicine.Controller.UserRequest
+import com.app.medicine.views.HomeActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -51,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                 val code = response.code().toString()
                 Log.e("Success", response.code().toString())
                 if(code == "200"){
-                    val intent = Intent(this@LoginActivity,MainActivity::class.java)
+                    val intent = Intent(this@LoginActivity,HomeActivity::class.java)
                     startActivity(intent)
                 }
                 Log.e("Success", response.toString())
