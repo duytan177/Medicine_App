@@ -18,16 +18,18 @@ class UserModel{
         var email:String ?= null
 
 
+        @SerializedName("role") //---> Ví dụ, trường studentId trong được đại diện là ID trong JSON.
+        @Expose
+        var role:String ?= null
         @SerializedName("name")
         @Expose
         var name:String ?= null
 
-        @SerializedName("role") //---> Ví dụ, trường studentId trong được đại diện là ID trong JSON.
-        @Expose
-        var role:String ?= null
+
 
         @SerializedName("token")
         @Expose
         var token:String ?= null
+
     }
 }

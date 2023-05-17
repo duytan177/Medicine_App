@@ -13,6 +13,7 @@ import com.app.medicine.Controller.UserRequest
 
 import com.app.medicine.Model.UserModel
 import com.app.medicine.R
+import com.app.medicine.views.AdminActivity
 
 import com.app.medicine.views.HomeActivity
 import kotlinx.android.synthetic.main.activity_login.*
@@ -55,6 +56,12 @@ class LoginActivity : AppCompatActivity() {
                 Log.e("Success", response.body()?.data?.role.toString())
                 if(code == "200"&& role == "2"){
                     val intent = Intent(this@LoginActivity,HomeActivity::class.java)
+                    intent.putExtra("id",id)
+                    intent.putExtra("name",name)
+                    intent.putExtra("role",role)
+                    startActivity(intent)
+                }else if(code == "200"&& role == "1"){
+                    val intent = Intent(this@LoginActivity,AdminActivity::class.java)
                     intent.putExtra("id",id)
                     intent.putExtra("name",name)
                     intent.putExtra("role",role)
