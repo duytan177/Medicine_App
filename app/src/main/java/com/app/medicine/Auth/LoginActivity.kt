@@ -1,25 +1,25 @@
 package com.app.medicine.Auth
 
+//import android.support.v7.app.AppCompatActivity
+
 import android.app.ProgressDialog
 import android.content.Intent
-import android.content.SharedPreferences
-//import android.support.v7.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatActivity
-
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.app.medicine.API.Api
-import com.app.medicine.MainActivity
-import com.app.medicine.R
 import com.app.medicine.API.ServiceGenerator
-import com.app.medicine.Model.UserModel
 import com.app.medicine.Controller.UserRequest
+
+import com.app.medicine.Model.UserModel
+import com.app.medicine.R
+import com.app.medicine.views.AdminActivity
+
 import com.app.medicine.views.HomeActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-
 
 
 class LoginActivity : AppCompatActivity() {
@@ -50,9 +50,21 @@ class LoginActivity : AppCompatActivity() {
         call.enqueue(object : Callback<UserModel>{
             override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
                 val code = response.code().toString()
-                Log.e("Success", response.code().toString())
-                if(code == "200"){
+                val role = response.body()?.data?.role.toString()
+                val name = response.body()?.data?.name.toString()
+                val id = response.body()?.data?.id.toString()
+                Log.e("Success", response.body()?.data?.role.toString())
+                if(code == "200"&& role == "2"){
                     val intent = Intent(this@LoginActivity,HomeActivity::class.java)
+                    intent.putExtra("id",id)
+                    intent.putExtra("name",name)
+                    intent.putExtra("role",role)
+                    startActivity(intent)
+                }else if(code == "200"&& role == "1"){
+                    val intent = Intent(this@LoginActivity,AdminActivity::class.java)
+                    intent.putExtra("id",id)
+                    intent.putExtra("name",name)
+                    intent.putExtra("role",role)
                     startActivity(intent)
                 }
                 Log.e("Success", response.toString())

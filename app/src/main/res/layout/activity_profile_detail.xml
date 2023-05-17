@@ -117,7 +117,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/edtDateRequi"
+                        android:id="@+id/edtNumAffair"
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:layout_marginStart="20dp"
@@ -147,7 +147,7 @@
                         android:textSize="16sp" />
 
                     <EditText
-                        android:id="@+id/edtNumAffair"
+                        android:id="@+id/edtPrice"
                         android:layout_width="match_parent"
                         android:layout_height="38dp"
                         android:layout_marginStart="20dp"

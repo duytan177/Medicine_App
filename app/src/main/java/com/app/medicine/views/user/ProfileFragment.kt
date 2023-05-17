@@ -3,6 +3,7 @@ package com.app.medicine.views.user
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.Profile
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
 import com.app.medicine.Adapter.ProfileAdapter
 import com.app.medicine.Adapter.SponsorshipAdapter
+import com.app.medicine.Controller.ProfileRequest
 import com.app.medicine.Model.ProfileModel
 import com.app.medicine.R
 import kotlinx.android.synthetic.main.fragment_profile.*
@@ -52,6 +54,9 @@ class ProfileFragment : Fragment() {
     }
 
     private fun getAllProfile() {
+
+//        val request = ProfileRequest()
+//        request.id =
         val call = api.getAllProfiles()
         call.enqueue(object : retrofit2.Callback<MutableList<ProfileModel>>{
             override fun onResponse(
@@ -75,6 +80,16 @@ class ProfileFragment : Fragment() {
                     adapter.setOnItemClickListener(object : ProfileAdapter.OnItemClickListener{
                         override fun onItemClick(position: Int) {
                             val intent = Intent(requireContext(), ProfileDetailActivity::class.java)
+
+                            val values = response.body()!!;
+                            val profile = values[position];
+                            intent.putExtra("date",profile.created_at)
+                            intent.putExtra("serviceDate",profile.updated_at)
+                            intent.putExtra("numAffair",profile.num_affair)
+                            intent.putExtra("servicePrice",profile.service_price)
+                            intent.putExtra("default",profile.default)
+                            intent.putExtra("requestAuthority",profile.request_authority)
+                            intent.putExtra("typeofService",profile.type_of_service)
                             startActivity(intent)
                         }
                     })
@@ -122,4 +137,8 @@ class ProfileFragment : Fragment() {
         }
     }
 
+
 }
+
+
+
