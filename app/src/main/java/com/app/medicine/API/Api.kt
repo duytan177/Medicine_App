@@ -34,4 +34,6 @@ interface Api {
 
     @GET("projectdemo/user/profile")
     fun getAllProfiles() : Call<MutableList<ProfileModel>>
+
+
 }

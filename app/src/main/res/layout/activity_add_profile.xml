@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.user.AddProfileActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Date Requisition:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtStartDate"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="mm/dd/yyyy"
+                    android:inputType="date"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/btnSelectStartDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="47dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/date" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtEndDate"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:text="Service Date:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtEndDate"
+                    android:layout_width="150dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="mm/dd/yyyy"
+                    android:inputType="date"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/btnSelectEndDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/date" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Num Affair:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtDateRequi"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Service price:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtNumAffair"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Default Jurisdiction:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtDefaultJuris"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Requesting authority:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtRequestingAuthority"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:text="Type of service:"
+                    android:textColor="#6C5DD2"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/edtTypeOfService"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_edt"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="textPersonName"
+                    android:textColor="#707070"
+                    android:textColorHint="#707070"
+                    android:textSize="14sp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IMAGES"
+                    android:textColor="@color/black"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp">
+
+                    <Button
+                        android:id="@+id/btnChooseImageAddProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginVertical="10dp"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:text="Choose file" />
+
+                    <Button
+                        android:id="@+id/btnSendImageAddProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_marginVertical="10dp"
+                        android:paddingHorizontal="30dp"
+                        android:paddingVertical="10dp"
+                        android:text="Send" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

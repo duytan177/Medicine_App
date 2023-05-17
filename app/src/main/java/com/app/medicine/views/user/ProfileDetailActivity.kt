@@ -32,11 +32,11 @@ class ProfileDetailActivity : AppCompatActivity() {
                     )
             }
         )
-        btnChooseImageProfile.setOnClickListener() {
+        btnChooseImageUpdateProfile.setOnClickListener() {
             galleryImage.launch("image/*")
         }
 
-        btnSendImageProfile.setOnClickListener() {
+        btnSendImageUpdateProfile.setOnClickListener() {
 
         }
     }
