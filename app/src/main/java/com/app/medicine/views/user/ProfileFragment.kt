@@ -35,8 +35,13 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         api = ServiceGenerator.getInstance().create(Api::class.java)
-
         val view = inflater.inflate(R.layout.fragment_profile, container, false)
+
+        view.btnAddProfile.setOnClickListener() {
+            val intent = Intent(requireContext(), AddProfileActivity::class.java)
+            startActivity(intent)
+        }
+
 
         // Date of Start and End
         // Viết 1 hàm sài luôn không cần viết ra dài dòng như bên RegisterActivity

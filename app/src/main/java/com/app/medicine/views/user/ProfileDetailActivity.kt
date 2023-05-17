@@ -60,42 +60,47 @@ class ProfileDetailActivity : AppCompatActivity() {
 //                imageProfile.setImageURI(it)
 //            } =>>>> One image choosse
             ActivityResultCallback { images ->
-                    _recyImages.adapter = ImageAdapter(images)
-                    _recyImages.layoutManager = LinearLayoutManager(
-                        this,
-                        LinearLayoutManager.VERTICAL,
-                        false
-                    )
+                _recyImages.adapter = ImageAdapter(images)
+                _recyImages.layoutManager = LinearLayoutManager(
+                    this,
+                    LinearLayoutManager.VERTICAL,
+                    false
+                )
             }
         )
-        btnChooseImageProfile.setOnClickListener() {
+        btnChooseImageUpdateProfile.setOnClickListener() {
             galleryImage.launch("image/*")
         }
 
-        btnSendImageProfile.setOnClickListener() {
-            val request = UploadProfileRequest();
-            request.date = edtStartDate.text.toString()
-            request.serviceDate = edtEndDate.text.toString()
-            request.numberAffair = edtNumAffair.text.toString()
-            request.servicePrice = edtPrice.text.toString()
-            request.default = edtDefaultJuris.text.toString()
-            request.authority = edtRequestingAuthority.text.toString()
-            request.service = edtTypeOfService.text.toString()
-            request.imageUpload = btnChooseImageProfile.urls.toString()
+        btnSendImageUpdateProfile.setOnClickListener() {
+            btnSendImageUpdateProfile.setOnClickListener() {
+                val request = UploadProfileRequest();
+                request.date = edtStartDate.text.toString()
+                request.serviceDate = edtEndDate.text.toString()
+                request.numberAffair = edtNumAffair.text.toString()
+                request.servicePrice = edtPrice.text.toString()
+                request.default = edtDefaultJuris.text.toString()
+                request.authority = edtRequestingAuthority.text.toString()
+                request.service = edtTypeOfService.text.toString()
+                request.imageUpload = btnChooseImageUpdateProfile.urls.toString()
 
-            val call = api.getUploadImage(request)
-            call.enqueue(object : retrofit2.Callback<MutableList<ProfileUploadModel>>{
-                override fun onResponse(
-                    call: Call<MutableList<ProfileUploadModel>>,
-                    response: Response<MutableList<ProfileUploadModel>>
-                ) {
-                    Log.i("success",response.body().toString())
-                }
+                val call = api.getUploadImage(request)
+                call.enqueue(object : retrofit2.Callback<MutableList<ProfileUploadModel>> {
+                    override fun onResponse(
+                        call: Call<MutableList<ProfileUploadModel>>,
+                        response: Response<MutableList<ProfileUploadModel>>
+                    ) {
+                        Log.i("success", response.body().toString())
+                    }
 
-                override fun onFailure(call: Call<MutableList<ProfileUploadModel>>, t: Throwable) {
-                    Log.e("error",t.message.toString())
-                }
-            })
+                    override fun onFailure(
+                        call: Call<MutableList<ProfileUploadModel>>,
+                        t: Throwable
+                    ) {
+                        Log.e("error", t.message.toString())
+                    }
+                })
+            }
         }
     }
 }

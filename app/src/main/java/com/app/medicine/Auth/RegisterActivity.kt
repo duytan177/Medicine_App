@@ -133,8 +133,6 @@ class RegisterActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
                     val code = response.code().toString()
                     Log.e("success",response.toString())
-
-
                 }
 
                 override fun onFailure(call: Call<UserModel>, t: Throwable) {
@@ -223,7 +221,7 @@ class RegisterActivity : AppCompatActivity() {
         edtProviderCategory.setText(sf.getString("provider", null))
         edtDissertationCurrency.setText(sf.getString("dissertation", null))
     }
-    private fun getCity() {
+    public fun getCity() {
        val callData  = api.getCities()
         callData.enqueue(object : Callback<MutableList<CityResponse>>{
             override fun onResponse(
