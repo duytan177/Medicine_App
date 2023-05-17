@@ -1,12 +1,8 @@
 package com.app.medicine.API
 
 
-import com.app.medicine.Controller.CityResponse
-import com.app.medicine.Controller.RegisterRequest
-import com.app.medicine.Model.UserModel
-import com.app.medicine.Controller.UserRequest
-import com.app.medicine.Model.SponsorshipModel
-import com.app.medicine.Model.UsersModel
+import com.app.medicine.Controller.*
+import com.app.medicine.Model.*
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -30,4 +26,11 @@ interface Api {
 
     @GET("projectdemo/admin/user")
     fun getAllUsers() : Call<MutableList<UsersModel>>
+
+    @GET("projectdemo/user/profile")
+    fun getAllProfiles() : Call<MutableList<ProfileModel>>
+
+
+    @POST("projectdemo/user/profile")
+    fun getUploadImage(@Body uploadProfile: UploadProfileRequest) : Call<MutableList<ProfileUploadModel>>
 }
