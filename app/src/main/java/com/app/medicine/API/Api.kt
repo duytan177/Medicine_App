@@ -25,7 +25,7 @@ interface Api {
     @POST("/projectdemo/api/register")
     fun register(@Body registerRequest: RegisterRequest,) : Call<UserModel>
 
-    @GET("projectdemo/user/sponsorship")
+    @GET("projectdemo/api/user/sponsorship")
     fun getSponsorship() : Call<MutableList<SponsorshipModel>>
 
     @GET("projectdemo/admin/user")

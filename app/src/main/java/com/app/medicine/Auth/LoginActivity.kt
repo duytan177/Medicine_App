@@ -15,6 +15,7 @@ import com.app.medicine.Model.UserModel
 import com.app.medicine.R
 
 import com.app.medicine.views.HomeActivity
+import com.app.medicine.views.user.SponsorshipFragment
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -55,6 +56,12 @@ class LoginActivity : AppCompatActivity() {
                 Log.e("Success", response.body()?.data?.role.toString())
                 if(code == "200"&& role == "2"){
                     val intent = Intent(this@LoginActivity,HomeActivity::class.java)
+                    val intentSponsor = Intent(this@LoginActivity,SponsorshipFragment::class.java);
+                    intentSponsor.putExtra("id",id)
+                    intentSponsor.putExtra("name",name)
+                    intentSponsor.putExtra("role",role)
+                    sendBroadcast(intentSponsor);
+
                     intent.putExtra("id",id)
                     intent.putExtra("name",name)
                     intent.putExtra("role",role)

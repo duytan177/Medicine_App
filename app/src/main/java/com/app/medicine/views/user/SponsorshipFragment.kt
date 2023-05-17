@@ -2,10 +2,10 @@ package com.app.medicine.views.user
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
@@ -31,6 +31,11 @@ class SponsorshipFragment : Fragment() {
 
         /* Trong Fragment phải khởi tạo view đã rồi mới code tiếp được */
         val view = inflater.inflate(R.layout.fragment_sponsorship, container, false)
+        val bundle = arguments
+        if (bundle != null) {
+            val id = bundle.getString("id")
+            Log.e("eorr",id.toString());
+        }
         getSponsorship()
 
         /* VIEW */
@@ -43,8 +48,9 @@ class SponsorshipFragment : Fragment() {
                 call: Call<MutableList<SponsorshipModel>>,
                 response: Response<MutableList<SponsorshipModel>>
             ) {
-                Log.i("Hihihihi", "${response.body().toString()}")
 
+                Log.i("Hihihihi", "${response.body().toString()}")
+                Log.e("success",    "1");
                 if(response.isSuccessful && response.body() != null) {
                     listDataSponsorShip.clear()
                     listDataSponsorShip.addAll(response.body()!!)
@@ -54,10 +60,10 @@ class SponsorshipFragment : Fragment() {
                 {
                 /*   hasBeenCalled chỉ để gọi một lần, nếu không sử dụng thì mỗi lần bấm vào fragment
                      sponsor là nó sẽ gọi api nhiều lần =>> render ra view nhiều lần ( dư thừa )*/
-                    if(!hasBeenCalled) {
-                        listDataSponsorShip.addAll(response.body()!!)
-                        hasBeenCalled = true
-                    }
+//                    if(!hasBeenCalled) {
+//                        listDataSponsorShip.addAll(response.body()!!)
+//                        hasBeenCalled = true
+//                    }
 
                     // Thêm data đã gọi từ API vào trong list, list này là list đã được tạo trong Adapter
                         adapter.setData(listDataSponsorShip)
