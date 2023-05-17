@@ -44,6 +44,7 @@ class SponsorshipFragment : Fragment() {
                 response: Response<MutableList<SponsorshipModel>>
             ) {
                 Log.i("Hihihihi", "${response.body().toString()}")
+
                 if(response.isSuccessful &&
                     response.body() != null)
                 {

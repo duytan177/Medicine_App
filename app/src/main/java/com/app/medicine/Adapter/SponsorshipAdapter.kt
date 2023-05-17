@@ -22,7 +22,8 @@ class SponsorshipAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return AdapterSponsorshipHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.sponsorship_itemview, parent, false)
+            LayoutInflater.from(parent.context)
+                .inflate(R.layout.sponsorship_itemview, parent, false)
         )
     }
 
