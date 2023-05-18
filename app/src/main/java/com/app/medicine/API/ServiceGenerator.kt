@@ -11,7 +11,7 @@ object ServiceGenerator  {
 
     // Địa chỉ của Nam
 
-    private const val URL = "http://192.168.1.109:8080/"
+    private const val URL = "http://192.168.1.101:8080/"
     fun getInstance(): Retrofit {
         val gson = GsonBuilder()
             .setLenient()

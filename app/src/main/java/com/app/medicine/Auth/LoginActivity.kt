@@ -6,6 +6,7 @@ import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
@@ -42,6 +43,10 @@ class LoginActivity : AppCompatActivity() {
 
 
     private fun sendLogin() {
+        var progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Please Wait....")
+        progressDialog.show()
+
         val request = UserRequest()
         request.email = edtEmailLogin.text.toString()
         request.password = edtPasswordLogin.text.toString()
@@ -54,18 +59,23 @@ class LoginActivity : AppCompatActivity() {
                 val name = response.body()?.data?.name.toString()
                 val id = response.body()?.data?.id.toString()
                 Log.e("Success", response.body()?.data?.role.toString())
-                if(code == "200"&& role == "2"){
+                if(progressDialog.isShowing()) {
+                    if(code == "200"&& role == "2"){
                     val intent = Intent(this@LoginActivity,HomeActivity::class.java)
                     intent.putExtra("id",id)
                     intent.putExtra("name",name)
                     intent.putExtra("role",role)
+                        progressDialog.dismiss();
                     startActivity(intent)
-                }else if(code == "200"&& role == "1"){
-                    val intent = Intent(this@LoginActivity,AdminActivity::class.java)
-                    intent.putExtra("id",id)
-                    intent.putExtra("name",name)
-                    intent.putExtra("role",role)
-                    startActivity(intent)
+                    }
+                    else if(code == "200"&& role == "1"){
+                        val intent = Intent(this@LoginActivity,AdminActivity::class.java)
+                        intent.putExtra("id",id)
+                        intent.putExtra("name",name)
+                        intent.putExtra("role",role)
+                        progressDialog.dismiss();
+                        startActivity(intent)
+                    }
                 }
                 Log.e("Success", response.toString())
             }
