@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".views.user.AccountFragment">
 
     <LinearLayout
@@ -12,13 +13,735 @@
         android:gravity="center"
         android:layout_gravity="center">
 
-        <TextView
-            android:text="Account"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:textColor="@color/main_color"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="-253dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/top_login" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="ACCOUNT"
+                    android:textAlignment="center"
+                    android:textColor="#2326F3"
+                    android:textSize="40sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="11dp"
+                        android:text="Status: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="18sp" />
+
+                    <RadioGroup
+                        android:id="@+id/statusUpdate"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/mr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Mr" />
+
+                        <RadioButton
+                            android:id="@+id/mrs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Mrs" />
+
+                        <RadioButton
+                            android:id="@+id/dr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Dr" />
+
+                        <RadioButton
+                            android:id="@+id/me"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:text="Me" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!-- First Name -->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtFirstName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:text="First Name: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountFirstName"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="Enter Your First Name"
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Last Name -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtLastName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:text="Last Name: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountLastName"
+                        android:layout_width="match_parent"
+                        android:layout_height="33dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="Enter Your Last Name"
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Email -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:text="Email-address: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="Enter Your Email"
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <!-- Password -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:text="Password:"
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="******"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Confirm Password -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtConfirmPassword"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Confirm password:"
+                        android:textColor="#6C5DD2"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="******"
+                        android:inputType="textEmailAddress"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Date of Birth: -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txtDate"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="1"
+                        android:text="Date of Birth:"
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountDate"
+                        android:layout_width="150dp"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint="mm/dd/yyyy"
+                        android:inputType="date"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+
+                    <ImageButton
+                        android:id="@+id/btnSelectDateUpdate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:src="@drawable/date" />
+
+                </LinearLayout>
+
+                <!-- Address 1 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtAddress1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="11dp"
+                        android:layout_weight="1"
+                        android:text="Address 1:"
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountAddress1"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Address 2 -->
+
+                <!-- Code Postal -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtAddress2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="11dp"
+                        android:layout_weight="1"
+                        android:text="Address 2:"
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountAddress2"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtCodePostal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_weight="1"
+                        android:text="Code Postal"
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountCodePostal"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- City -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="52dp"
+                        android:layout_weight="1"
+                        android:text="City: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <Spinner
+                        android:id="@+id/edtAccountCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Siret -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtSiret"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="47dp"
+                        android:layout_weight="1"
+                        android:text="Siret: "
+                        android:textColor="#6C5DD2"
+
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountSiret"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Num VAT -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtNumVAT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_weight="1"
+                        android:text="Num VAT: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountNumVAT"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- IBAN:  -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtIBAN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="46dp"
+                        android:layout_weight="1"
+                        android:text="IBAN: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountIBAN"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- B.I.C SWIFT  -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtBIC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="-1dp"
+                        android:layout_weight="1"
+                        android:text="B.I.C SWIFT: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountBIC"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Sponsor Code  -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtSponsorCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="-17dp"
+                        android:layout_weight="1"
+                        android:text="Sponsor Code: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountSponsorCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Number SSRS  -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtSSRS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="-15dp"
+                        android:layout_weight="1"
+                        android:text="Number SSRS: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountSSRS"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Default  -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtDefault"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginRight="34dp"
+                        android:layout_weight="1"
+                        android:text="Default: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountDefault"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Provider category  -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtProviderCategory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Provider category: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountProviderCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <!-- Dissertation Currency  -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp">
+
+                    <TextView
+                        android:id="@+id/txtDissertationCurrency"
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_weight="1"
+                        android:text="Dissertation Currency: "
+                        android:textColor="#6C5DD2"
+                        android:textSize="16sp" />
+
+                    <EditText
+                        android:id="@+id/edtAccountDissertationCurrency"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/background_edt"
+                        android:ems="10"
+                        android:gravity="center"
+                        android:hint=""
+                        android:inputType="textPersonName"
+                        android:textColor="#707070"
+                        android:textColorHint="#707070"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/btnUpdateAccount"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/registerbtn_background"
+                        android:text="Update"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </ScrollView>
+        />
     </LinearLayout>
 
 </FrameLayout>
