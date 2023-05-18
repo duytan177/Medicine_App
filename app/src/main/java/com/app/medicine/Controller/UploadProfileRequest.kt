@@ -10,4 +10,5 @@ data class UploadProfileRequest(
     var authority: String ?= null,
     var service: String ?= null,
     var imageUpload: String ?= null
+
 )

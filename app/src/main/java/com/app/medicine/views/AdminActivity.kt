@@ -25,14 +25,11 @@ class AdminActivity : AppCompatActivity() {
 
     private fun getAllUsers() {
         val call = api.getAllUsers()
+        Log.e("call",call.toString())
         call.enqueue(object : retrofit2.Callback<MutableList<UsersModel>>{
-            override fun onResponse(
-                call: Call<MutableList<UsersModel>>,
-                response: Response<MutableList<UsersModel>>
-            ) {
+            override fun onResponse(call: Call<MutableList<UsersModel>>,response: Response<MutableList<UsersModel>>) {
                 Log.i("Hihihihi", "${response.body().toString()}")
             }
-
             override fun onFailure(call: Call<MutableList<UsersModel>>, t: Throwable) {
                 Log.e("error",t.message.toString())
             }

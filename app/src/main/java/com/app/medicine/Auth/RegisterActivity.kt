@@ -1,6 +1,7 @@
 package com.app.medicine.Auth
 
 import android.app.DatePickerDialog
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 
@@ -133,6 +134,8 @@ class RegisterActivity : AppCompatActivity() {
                 override fun onResponse(call: Call<UserModel>, response: Response<UserModel>) {
                     val code = response.code().toString()
                     Log.e("success",response.toString())
+                    val intent = Intent(this@RegisterActivity,LoginActivity::class.java)
+                    startActivity(intent)
                 }
 
                 override fun onFailure(call: Call<UserModel>, t: Throwable) {
