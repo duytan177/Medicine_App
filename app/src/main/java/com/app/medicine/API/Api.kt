@@ -5,9 +5,11 @@ import com.app.medicine.Controller.*
 import com.app.medicine.Model.*
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 
 interface Api {
@@ -30,7 +32,9 @@ interface Api {
     @GET("projectdemo/user/profile")
     fun getAllProfiles() : Call<MutableList<ProfileModel>>
 
-
     @POST("projectdemo/user/profile")
     fun getUploadImage(@Body uploadProfile: UploadProfileRequest) : Call<MutableList<ProfileUploadModel>>
+
+    @DELETE("projectdemo/admin/delete")
+    fun deleteUser(@Path("id") userId :String): Call<MutableList<UsersModel>>
 }

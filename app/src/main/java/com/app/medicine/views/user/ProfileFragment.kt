@@ -41,6 +41,7 @@ class ProfileFragment : Fragment() {
             val intent = Intent(requireContext(), AddProfileActivity::class.java)
             startActivity(intent)
         }
+        getAllProfile()
 
 
         // Date of Start and End
@@ -48,7 +49,6 @@ class ProfileFragment : Fragment() {
         chooseStartAndEndDate(view, view.btnSelectStartDate)
         chooseStartAndEndDate(view, view.btnSelectEndDate)
 
-        getAllProfile()
 
         return view
     }
@@ -65,8 +65,8 @@ class ProfileFragment : Fragment() {
             ) {
                 Log.i("Hihihihi", "${response.body().toString()}")
 
-                if(response.isSuccessful &&
-                    response.body() != null) {
+                if(response.isSuccessful && response.body() != null)
+                {
                     listDataProfile.addAll(response.body()!!)
                     adapter.setData(listDataProfile)
                     _recyProfileData.adapter = adapter

@@ -1,8 +1,12 @@
 package com.app.medicine.views.user
 
+import android.app.ProgressDialog
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -11,16 +15,36 @@ import com.app.medicine.API.Api
 import com.app.medicine.API.ServiceGenerator
 import com.app.medicine.Adapter.ImageAdapter
 import com.app.medicine.Controller.UploadProfileRequest
+import com.app.medicine.MainActivity
 import com.app.medicine.Model.ProfileUploadModel
 import com.app.medicine.R
+import com.app.medicine.databinding.ActivityMainBinding
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
+import com.google.firebase.storage.ktx.storage
 import kotlinx.android.synthetic.main.activity_profile_detail.*
 import kotlinx.android.synthetic.main.fragment_profile.*
 import retrofit2.Call
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
 import javax.security.auth.callback.Callback
 
 class ProfileDetailActivity : AppCompatActivity() {
     private lateinit var api: Api
+    private lateinit var uriImage: Uri
+    private lateinit var storageRef : StorageReference
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == 100 && data != null && data.data != null) {
+            uriImage = data.data!!
+            imageProfile.setImageURI(uriImage)
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile_detail)
@@ -55,25 +79,32 @@ class ProfileDetailActivity : AppCompatActivity() {
 
 
         val galleryImage = registerForActivityResult(
-            ActivityResultContracts.GetMultipleContents(),
-//            ActivityResultCallback {
-//                imageProfile.setImageURI(it)
-//            } =>>>> One image choosse
-            ActivityResultCallback { images ->
-                _recyImages.adapter = ImageAdapter(images)
-                _recyImages.layoutManager = LinearLayoutManager(
-                    this,
-                    LinearLayoutManager.VERTICAL,
-                    false
-                )
+            ActivityResultContracts.GetContent(),
+//            ActivityResultCallback { images ->
+//                _recyImages.adapter = ImageAdapter(images)
+//                _recyImages.layoutManager = LinearLayoutManager(
+//                    this,
+//                    LinearLayoutManager.VERTICAL,
+//                    false
+//                )
+//            }
+                    ActivityResultCallback {
+                imageProfile.setImageURI(it)
             }
         )
         btnChooseImageUpdateProfile.setOnClickListener() {
-            galleryImage.launch("image/*")
+            var intent2 = Intent()
+            intent2.setType("image/*")
+            intent2.setAction(Intent.ACTION_GET_CONTENT)
+            startActivityForResult(intent2, 100)
+
         }
 
-        btnSendImageUpdateProfile.setOnClickListener() {
             btnSendImageUpdateProfile.setOnClickListener() {
+                // Up on Firebase
+                uploadImage()
+
+
                 val request = UploadProfileRequest();
                 request.date = edtStartDate.text.toString()
                 request.serviceDate = edtEndDate.text.toString()
@@ -83,6 +114,7 @@ class ProfileDetailActivity : AppCompatActivity() {
                 request.authority = edtRequestingAuthority.text.toString()
                 request.service = edtTypeOfService.text.toString()
                 request.imageUpload = btnChooseImageUpdateProfile.urls.toString()
+
 
                 val call = api.getUploadImage(request)
                 call.enqueue(object : retrofit2.Callback<MutableList<ProfileUploadModel>> {
@@ -102,5 +134,40 @@ class ProfileDetailActivity : AppCompatActivity() {
                 })
             }
         }
+
+    private fun uploadImage() {
+        var progressDialog = ProgressDialog(this)
+        progressDialog.setTitle("Uploading file....")
+        progressDialog.show()
+
+        var formatter = SimpleDateFormat("yyyy_MM_dd_HH_mm_ss", Locale.UK)
+        var now = Date()
+        var fileName: String = formatter.format(now)
+
+        storageRef = FirebaseStorage.getInstance().getReference("images/" + fileName)
+        storageRef.putFile(uriImage)
+            .addOnSuccessListener { taskSnapshot ->
+
+                imageProfile.setImageURI(null)
+
+                storageRef.downloadUrl.addOnSuccessListener { downloadUrl ->
+                    val imageUrl = downloadUrl.toString()
+                    Log.i("ok roi", " " + imageUrl)
+
+                    if(progressDialog.isShowing()) {
+                        progressDialog.dismiss();
+                    }
+                    Toast.makeText(this, "Successfully uploaded", Toast.LENGTH_SHORT).show()
+
+                }
+
+
+            }
+            .addOnFailureListener { exception ->
+                Log.e("fail roi", "ko")
+                Toast.makeText(this, "Failed to uploaded", Toast.LENGTH_SHORT).show()
+
+            }
+
     }
 }
